@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "@/app/styles/globals.css";
 import { ShadcnThemeProvider } from "@/providers/shadcn-theme-provider";
+import { AnimatedBackground } from "@/components/layout/animated-background";
+import { Header } from "@/components/layout/header";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -31,7 +33,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <AnimatedBackground>
+            <Header />
+            {children}
+          </AnimatedBackground>
         </ShadcnThemeProvider>
       </body>
     </html>
